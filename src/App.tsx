@@ -12,6 +12,7 @@ import {
   Profile,
   Signup,
   Welcome,
+  Admin,
 } from "./pages";
 import {
   InputModal,
@@ -77,6 +78,7 @@ export const App = () => {
           <Route path="/people" element={<People />} />
           <Route path="/explore" element={<Explore />} />
           <Route path="/bookmark" element={<Bookmark />} />
+          <Route path="/admin" element={<Admin />} />
           <Route path="/profile/:profileID" element={<Profile />} />
         </Route>
       </Routes>

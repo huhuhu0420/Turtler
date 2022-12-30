@@ -15,6 +15,7 @@ export const DropDown = (prop: Posts) => {
   const dispatch = useAppDispatch();
 
   const domNode = useClickOutside(() => setDropdown(false));
+  const adminId = "moV2IBntKlZzo0D58QtockpHGs93";
   return (
     <div className="menu-btn">
       <BsThreeDots onClick={() => setDropdown(!dropdown)} />
@@ -33,7 +34,7 @@ export const DropDown = (prop: Posts) => {
                 Edit
               </li>
             )}
-            {prop.uid === id && (
+            {(prop.uid === id || id === adminId) && (
               <li
                 onClick={() => dispatch(deletePost(prop.postID))}
                 className="item"

@@ -5,10 +5,7 @@ import {setLastDoc } from "../../features/postsSlice";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { getPosts, getNewPosts } from "../../services/postServices";
 
-export const Explore = () => {
-  const { id } = useAppSelector((store) => store?.auth);
-  const adminId = "moV2IBntKlZzo0D58QtockpHGs93";
-
+export const Admin = () => {
   const { postsLoading, posts, latestDoc, newPostsLoading } = useAppSelector(
     (store) => store?.posts
   );
@@ -34,12 +31,10 @@ export const Explore = () => {
     }
   }, [latestDoc]);
 
-  let exploreTitle = (id === adminId) ? "Explore [Admin]" : "Explore";
-
   return (
     <>
       <main className="main-container">
-        <h4 className="title">{exploreTitle}</h4>
+        <h4 className="title">Admin</h4>
 
         {postsLoading ? (
           <PostLoader />
