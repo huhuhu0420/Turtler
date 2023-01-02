@@ -1,13 +1,39 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { PostCard, PostLoader } from "../../components";
 import { getBookmarkedPosts } from "../../services/postServices";
-
+import Select from 'react-select'
 
 export const Bookmark = () => {
-  const { bookmarkedPosts, bookmarkedPostsLoading } = useAppSelector(
+  let { bookmarkedPosts, bookmarkedPostsLoading, posts } = useAppSelector(
     (store) => store?.posts
   );
+
+  const auth = useAppSelector((store) => store.auth);
+  // admin
+  const adminId = "moV2IBntKlZzo0D58QtockpHGs93";
+  const [switchedId, setSwichedId] = useState(auth.id);
+  const { allUsers } = useAppSelector((store) => store.auth);
+  const switchedUsers = allUsers.filter((user) => user.id === switchedId);
+  interface IKeys { value: string; label: string }
+  let options = allUsers.map((user) => ({
+    value: user.id+"",
+    label: user.userName+""
+  } as IKeys))
+  const customStyles = {
+    option:(provided:any) => ({
+      ...provided,
+      color:"black",
+    }),
+  }
+  bookmarkedPosts = posts.filter(
+    (post) => 
+      switchedUsers[0].bookmarkedPosts.some((p) => p === post.postID),
+      console.log(switchedUsers[0].bookmarkedPosts)
+  )
+
+  // admin
+  let title = (auth.id === adminId) ? "Bookmarks [Admin]" : "Bookmarks";
 
   const dispatch = useAppDispatch();
   useEffect(() => {
@@ -16,7 +42,17 @@ export const Bookmark = () => {
   return (
     <>
       <main className="main-container">
-        <h4 className="title">Bookmarks</h4>
+        <h4 className="title">{title}</h4>
+
+        {(auth.id === adminId) && (
+          <>
+            <Select 
+            options={options} 
+            onChange={(choice) => setSwichedId(choice?.value+"")}
+            styles={customStyles}
+            />
+          </>
+        )}
 
         {bookmarkedPostsLoading ? (
           <PostLoader />

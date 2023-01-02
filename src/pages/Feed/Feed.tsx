@@ -21,11 +21,6 @@ export const Feed = () => {
   const { allUsers } = useAppSelector((store) => store.auth);
   const switchedUsers = allUsers.filter((user) => user.id === switchedId);
   let following = switchedUsers[0].following
-  // let options = [
-  //   { value: "moV2IBntKlZzo0D58QtockpHGs93", label: "admin" },
-  //   { value: "29TBjuUXn2Pd2YftDrYpKXEWzNl1", label: "hi" },
-  //   { value: 'vanilla', label: 'Vanilla' }
-  // ]
   interface IKeys { value: string; label: string }
   let options = allUsers.map((user) => ({
     value: user.id+"",
@@ -39,7 +34,7 @@ export const Feed = () => {
   }
 
   // admin
-  let homeTitle = (auth.id === adminId) ? "Home [Admin]" : "Home";
+  let title = (auth.id === adminId) ? "Home [Admin]" : "Home";
 
   const dispatch = useAppDispatch();
 
@@ -84,7 +79,7 @@ export const Feed = () => {
     <>
       {/* <AlertDialog></AlertDialog> */}
       <main className="main-container">
-        <h4 className="title">{homeTitle}</h4>
+        <h4 className="title">{title}</h4>
 
         {(auth.id === adminId) && (
           <>
