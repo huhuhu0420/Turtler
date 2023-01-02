@@ -7,12 +7,39 @@ import { useFilterPosts } from "../../hooks/useFilterPosts";
 import { getPosts, getNewPosts } from "../../services/postServices";
 import styles from "./feed.module.css";
 import AlertDialog from "./dialog";
+import Select from 'react-select'
 
 export const Feed = () => {
   const { postsLoading, posts, latestDoc, newPostsLoading } = useAppSelector(
     (store) => store?.posts
   );
   const auth = useAppSelector((store) => store.auth);
+
+  // admin
+  const adminId = "moV2IBntKlZzo0D58QtockpHGs93";
+  const [switchedId, setSwichedId] = useState(auth.id);
+  const { allUsers } = useAppSelector((store) => store.auth);
+  const switchedUsers = allUsers.filter((user) => user.id === switchedId);
+  let following = switchedUsers[0].following
+  // let options = [
+  //   { value: "moV2IBntKlZzo0D58QtockpHGs93", label: "admin" },
+  //   { value: "29TBjuUXn2Pd2YftDrYpKXEWzNl1", label: "hi" },
+  //   { value: 'vanilla', label: 'Vanilla' }
+  // ]
+  interface IKeys { value: string; label: string }
+  let options = allUsers.map((user) => ({
+    value: user.id+"",
+    label: user.userName+""
+  } as IKeys))
+  const customStyles = {
+    option:(provided:any) => ({
+      ...provided,
+      color:"black",
+    }),
+  }
+
+  // admin
+  let homeTitle = (auth.id === adminId) ? "Home [Admin]" : "Home";
 
   const dispatch = useAppDispatch();
 
@@ -34,8 +61,8 @@ export const Feed = () => {
 
   const filteredPosts = posts.filter(
     (post) =>
-      post.uid === auth.id ||
-      auth.userDetails?.following.some((user) => user === post.uid)
+      post.uid === switchedId ||
+      following.some((user) => user === post.uid)
   );
   const sortedPosts = useFilterPosts(filteredPosts, sortBy);
 
@@ -55,9 +82,19 @@ export const Feed = () => {
 
   return (
     <>
-      <AlertDialog></AlertDialog>
+      {/* <AlertDialog></AlertDialog> */}
       <main className="main-container">
-        <h4 className="title">Home</h4>
+        <h4 className="title">{homeTitle}</h4>
+
+        {(auth.id === adminId) && (
+          <>
+            <Select 
+            options={options} 
+            onChange={(choice) => setSwichedId(choice?.value+"")}
+            styles={customStyles}
+            />
+          </>
+        )}
 
         <section className={styles.filterSection}>
           <button
