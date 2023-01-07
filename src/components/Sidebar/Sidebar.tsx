@@ -14,7 +14,7 @@ import { useState } from "react";
 import { useClickOutside } from "../../hooks/useClickOutside";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase.config";
-import { GiSittingDog } from "react-icons/gi";
+import { GiSittingDog, GiTurtleShell } from "react-icons/gi";
 
 export const Sidebar = () => {
   const [dropDown, setDropDown] = useState<Boolean>(false);
@@ -26,7 +26,7 @@ export const Sidebar = () => {
   return (
     <nav className={styles.nav}>
       <section className={styles.logo}>
-        <GiSittingDog className={styles.icon} />
+        <GiTurtleShell className={styles.icon} />
       </section>
 
       <section className={styles.icons}>

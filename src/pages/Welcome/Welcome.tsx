@@ -1,4 +1,5 @@
 import { GiSittingDog } from "react-icons/gi";
+import { GiTurtleShell } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
 
 import styles from "./welcome.module.css";
@@ -7,13 +8,13 @@ export const Welcome = () => {
   return (
     <div className={styles.welcome}>
       <div className={`reveal-text ${styles.logo}`}>
-        <GiSittingDog className={styles.icon} />
-        <h1>Seeker</h1>
+        <GiTurtleShell className={styles.icon} />
+        <h1>Turtler</h1>
       </div>
       <div className={` ${styles.headline}`}>
         <h1>
-          Seek out and connect with your people,{" "}
-          <span className="underline">your tribe!</span>
+          Twitter-liked social media,{" "}
+          <span className="underline">but not that good.</span>
         </h1>
       </div>
 
