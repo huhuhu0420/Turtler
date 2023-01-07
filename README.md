@@ -1,10 +1,10 @@
 
-<h1 align="center">Seeker</h1>
+<h1 align="center">Turtler</h1>
 
 <p align="center">
-  A social media application!
+A fake twitter
   <br>
-  <a target="__blank" href="https://seeker-f3c5d.web.app/"><strong>To the site!</strong></a>
+  <a target="__blank" href="https://seeker-f3c5d.web.app/"><strong>source</strong></a>
   <br>
 </p>
 
