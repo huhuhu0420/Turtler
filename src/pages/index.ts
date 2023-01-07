@@ -6,4 +6,3 @@ export { Explore } from "./Explore/Explore";
 export { Bookmark } from "./Bookmark/Bookmark";
 export { Profile } from "./Profile/Profile";
 export { Welcome } from "./Welcome/Welcome";
-export { Admin } from "./Admin/Admin";
