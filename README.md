@@ -47,7 +47,7 @@ REACT_APP_PROJECT_ID=<your project id>
 REACT_APP_STORAGE_BUCKET=<your storage bucket>
 REACT_APP_MESSAGING_SENDER_ID=<your sender id>
 REACT_APP_APP_ID=<your app id>
-REACT_APP_ADMIN_ID=<you admin account id> 
+REACT_APP_ADMIN_ID=<your admin account id> 
 ```
 After that Run in your local with this command. 
 
