@@ -15,6 +15,7 @@ import { useClickOutside } from "../../hooks/useClickOutside";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase.config";
 import { GiSittingDog, GiTurtleShell } from "react-icons/gi";
+import { BiSearchAlt } from "react-icons/bi";
 
 export const Sidebar = () => {
   const [dropDown, setDropDown] = useState<Boolean>(false);
@@ -53,7 +54,19 @@ export const Sidebar = () => {
           <MdExplore className={styles.icon} />{" "}
           <p className="flex-center">Explore</p>
         </NavLink>
-
+        
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? `${styles.iconContainer} ${styles.active} `
+              : `${styles.iconContainer}`
+          }
+          to="/search"
+        >
+          <BiSearchAlt className={styles.icon} />{" "}
+          <p className="flex-center">Search</p>
+        </NavLink>
+        
         <NavLink
           className={({ isActive }) =>
             isActive
