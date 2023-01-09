@@ -15,7 +15,7 @@ export const DropDown = (prop: Posts) => {
   const dispatch = useAppDispatch();
 
   const domNode = useClickOutside(() => setDropdown(false));
-  const adminId = "moV2IBntKlZzo0D58QtockpHGs93";
+  const adminId = process.env.REACT_APP_ADMIN_ID;
   return (
     <div className="menu-btn">
       <BsThreeDots onClick={() => setDropdown(!dropdown)} />

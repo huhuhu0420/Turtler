@@ -16,7 +16,7 @@ export const Feed = () => {
   const auth = useAppSelector((store) => store.auth);
 
   // admin
-  const adminId = "moV2IBntKlZzo0D58QtockpHGs93";
+  const adminId = process.env.REACT_APP_ADMIN_ID;
   const [switchedId, setSwichedId] = useState(auth.id);
   const { allUsers } = useAppSelector((store) => store.auth);
   const switchedUsers = allUsers.filter((user) => user.id === switchedId);
