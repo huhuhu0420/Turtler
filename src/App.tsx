@@ -12,6 +12,7 @@ import {
   Profile,
   Signup,
   Welcome,
+  Search,
 } from "./pages";
 import {
   InputModal,
@@ -78,6 +79,7 @@ export const App = () => {
           <Route path="/explore" element={<Explore />} />
           <Route path="/bookmark" element={<Bookmark />} />
           <Route path="/profile/:profileID" element={<Profile />} />
+          <Route path="/search" element={<Search />} />
         </Route>
       </Routes>
       {id && <Recommendations />}
