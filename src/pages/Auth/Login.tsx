@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./auth.module.css";
 import { useAppDispatch } from "../../app/hooks";
 import { login } from "../../services/authServices";
+import AlertDialog from "./dialog";
 
 export const Login = () => {
   const userRef = useRef<any>(null);
@@ -29,6 +30,7 @@ export const Login = () => {
 
   return (
     <section className="flex-center-container">
+    <AlertDialog></AlertDialog>
       <section className={styles.formBox}>
         <p
           ref={errRef}

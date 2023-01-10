@@ -6,7 +6,6 @@ import { setLastDoc } from "../../features/postsSlice";
 import { useFilterPosts } from "../../hooks/useFilterPosts";
 import { getPosts, getNewPosts } from "../../services/postServices";
 import styles from "./feed.module.css";
-import AlertDialog from "./dialog";
 import Select from 'react-select'
 
 export const Feed = () => {
@@ -77,7 +76,6 @@ export const Feed = () => {
 
   return (
     <>
-      {/* <AlertDialog></AlertDialog> */}
       <main className="main-container">
         <h4 className="title">{title}</h4>
 
