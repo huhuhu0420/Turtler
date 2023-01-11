@@ -4,10 +4,10 @@ import { PostCard, PostLoader } from "../../components";
 import {setLastDoc } from "../../features/postsSlice";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { getPosts, getNewPosts } from "../../services/postServices";
-// import { conformsTo } from "lodash";
-
 
 export const Search = () => {
+  let [getStr,setGetStr]=useState("");
+
   const { postsLoading, posts, latestDoc, newPostsLoading } = useAppSelector(
     (store) => store?.posts
   );
@@ -15,7 +15,7 @@ export const Search = () => {
   useEffect(() => {
     dispatch(setLastDoc());
     dispatch(getPosts(latestDoc));
-  }, []);
+  }, [getStr]);
 
   const fetchDataHandler = () => {
     dispatch(getNewPosts(latestDoc));
@@ -35,7 +35,6 @@ export const Search = () => {
 
 
 
-  var [getStr,setGetStr]=useState("");
   function changeValue(e: React.ChangeEvent<HTMLInputElement>){
     setGetStr(e.target.value);
   }
@@ -54,7 +53,6 @@ export const Search = () => {
       <main className="main-container">
         <h4 className="title">Search</h4>
         <input type="text" onChange={changeValue} />
-        {/* <button onClick={}/> */}
 
         {postsLoading ? (
           <PostLoader />
@@ -78,7 +76,7 @@ export const Search = () => {
             
           </InfiniteScroll>
         )}
-        {newPostsLoading && <PostLoader />}
+        {latestDoc !== undefined && newPostsLoading && <PostLoader />}
       </main>
     </>
   );

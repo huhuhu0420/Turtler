@@ -29,7 +29,6 @@ export const Bookmark = () => {
   bookmarkedPosts = posts.filter(
     (post) => 
       switchedUsers[0].bookmarkedPosts.some((p) => p === post.postID),
-      console.log(switchedUsers[0].bookmarkedPosts)
   )
 
   // admin
