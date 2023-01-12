@@ -2,9 +2,9 @@
 <h1 align="center">Turtler</h1>
 
 <p align="center">
-A fake twitter
+Twitter, but Turtler
   <br>
-  <a target="__blank" href="https://seeker-f3c5d.web.app/"><strong>source</strong></a>
+  <a target="__blank" href="https://wtfuck-d0de5.web.app/"><strong>online view</strong></a>
   <br>
 </p>
 
@@ -46,7 +46,8 @@ REACT_APP_AUTH_DOMAIN=<your domain>
 REACT_APP_PROJECT_ID=<your project id>
 REACT_APP_STORAGE_BUCKET=<your storage bucket>
 REACT_APP_MESSAGING_SENDER_ID=<your sender id>
-REACT_APP_APP_ID= <your app id>
+REACT_APP_APP_ID=<your app id>
+REACT_APP_ADMIN_ID=<your admin account id> 
 ```
 After that Run in your local with this command. 
 
@@ -77,17 +78,15 @@ And now this application runs in your local machine too.
 - Relevant Toast Messages on success or error of certain functionalities
 
 ---
-# Upcoming features
-- Notifications 
-- Send DMs to other users
-- Improved performances 
-- 
-
-## 👨‍💻 Connect with me
-
-<a href="https://twitter.com/partha_sarma8"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"/></a>
 
 ## Thanks
 
-Special thanks to my team members (team D3) for reviewing this project!
+### original project
+https://github.com/partha8/seeker
 
+### Teamates
+
+110590001
+110590009
+110590034
+110590035
