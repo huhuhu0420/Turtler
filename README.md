@@ -4,7 +4,9 @@
 <p align="center">
 Twitter, but Turtler
   <br>
-  <a target="__blank" href="https://wtfuck-d0de5.web.app/"><strong>online view</strong></a>
+  <a target="__blank" href="https://wtfuck-d0de5.web.app/"><strong>online view: first</strong></a>
+  <br>
+  <a target="__blank" href="https://tmp-1-30971.web.app/"><strong>online view: second</strong></a>
   <br>
 </p>
 
@@ -30,8 +32,8 @@ Twitter, but Turtler
 #### How To Run in Local - 
 Run these commands in your terminal
  ```
- git clone https://github.com/partha8/seeker.git
- cd ./Seeker
+ git clone https://github.com/huhuhu0420/Turtler.git
+ cd ./Turtler
  npm install
 ```
 
